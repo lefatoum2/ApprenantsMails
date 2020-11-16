@@ -1,7 +1,6 @@
 
+class Apprenant:
 
-
-class apprenant:
     def __init__(self, nom, prenom, id_apprenant):
         self.nom = nom
         self.prenom = prenom
@@ -32,4 +31,3 @@ class apprenant:
         zip1 = zip(lst1, lst3)
         dict1 = dict(zip1)
         return dict1
-

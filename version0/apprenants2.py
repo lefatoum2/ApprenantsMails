@@ -1,8 +1,6 @@
 import mysql.connector as mysqlpyth
 import os
 
-
-
 lst1 = []
 lst2 = []
 lst3 = []
@@ -19,8 +17,6 @@ cursor = bdd.cursor()
 query = "SELECT * FROM apprenant;"
 # exécute la requête grâce au curseur
 cursor.execute(query)
-
-
 
 # (données de la réquête) Liste de tuple d'apprenants avec leur identifiant, nom et prénom
 for ih in cursor:
@@ -45,6 +41,6 @@ zip1 = zip(lst1, lst3)
 dict1 = dict(zip1)
 print(dict1)
 # chaine de caractères de la requête à exécuter ( création de la colomne mail dans apprenant)
-#query = "ALTER TABLE apprenant ADD COLUMN mail VARCHAR(100);"
+# query = "ALTER TABLE apprenant ADD COLUMN mail VARCHAR(100);"
 # exécute la requête grâce au curseur
-#cursor.execute(query)
+# cursor.execute(query)
