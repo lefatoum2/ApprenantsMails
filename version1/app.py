@@ -1,11 +1,37 @@
 import os
 
-f = open("apprenantmail.txt", "r")
+
+def open1(file2):
+    f1 = open(file2, "r")
+    content1 = f1.read()
+    list1 = content1.splitlines()
+    f1.close()
+
+
+list5 = []
+
+
+def repl2(list1):
+    for list3 in list1:
+        list6 = list3.replace(".", '')
+        list6 = list6.replace("-", '')
+        list6 = list6.split("@")[0]
+        list5.append(list6)
+    return (list5)
+
+
+list29 = {}
+# def comp1(list15,list47):
+#    for list in list15:
+#        if list in list47:
+
+
+f = open("../version/apprenantmail.txt", "r")
 content = f.read()
 list1 = content.splitlines()
 f.close()
 
-f2 = open("apprenant.txt", "r")
+f2 = open("../apprenant.txt", "r")
 content2 = f2.read()
 list2 = content2.splitlines()
 f2.close()
@@ -20,8 +46,6 @@ for list3 in list1:
     list6 = list6.split("@")[0]
     list5.append(list6)
 print(list5)
-
-
 
 # -un fichier python avec une classe pour connecter à MySQL
 # -un pour extraire et traiter les emails du document texte
@@ -42,3 +66,10 @@ s = s.split("@")[0]
 s = s.replace("-", '')
 s = s.replace(".", '')
 print(s)
+
+dict23 = {}
+for i in list5:
+    for j in list10:
+        if i == j:
+            dict23[i] = j
+print(dict23)

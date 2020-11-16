@@ -2,7 +2,6 @@ import mysql.connector as mysqlpyth
 
 
 class Monty:
-
     def __init__(self, nom, prenom, id):
         self.id = id
         self.nom = nom
@@ -29,9 +28,12 @@ def lire_data():
     cursor.execute(query)
 
     # récupère les données retournées par le select
-    for id, nom, prenom in cursor:
-        nouveau = Monty(nom, prenom, id)
+    for id1, nom, prom in cursor:
+        nouveau = Monty(nom, prom, id1)
         groupe.append(nouveau)
+
+
+
 
     # chaine de cractères de la requête à exécuter
     query = "ALTER TABLE apprenant ADD COLUMN mail VARCHAR(100);"
@@ -47,9 +49,7 @@ def lire_data():
 # fonction principale de mon code
 def main():
     tous = lire_data()
-
     for monty in tous:
         print(monty.nom, monty.prenom)
 
 
-main()
